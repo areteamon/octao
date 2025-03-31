@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCTAO Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="OCTAO Logo" class="logo">
+        <div class="lang-switch">
+            <button onclick="switchLang('en')">🇬🇧</button>
+            <button onclick="switchLang('ua')">🇺🇦</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 id="portfolio-title">Portfolio</h1>
+    </section>
+
+    <section class="container">
+        <h2 id="about-me">About Me</h2>
+        <p>Hi! I'm Artem, a designer and creative guy. I love creating stylish designs and experimenting with visuals.</p>
+    </section>
+
+    <div class="container">
+        <h2 id="works-title">Works</h2>
+        <div class="grid">
+            <div class="item" onclick="openModal('villain')">
+                <img src="VILLAIN.png" alt="Villain">
+            </div>
+            <div class="item" onclick="openModal('pool')">
+                <img src="POOL.png" alt="Pool">
+            </div>
+            <div class="item" onclick="openModal('televisor')">
+                <img src="TELEVISOR.png" alt="Televisor">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Image">
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 OCTAO. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "portfolio-title": "Portfolio",
+                "works-title": "Works",
+                "about-me": "About Me",
+                "desc-villain": "Dark and mysterious character design.",
+                "desc-pool": "Moody poolside atmosphere.",
+                "desc-televisor": "Glitchy and surreal TV concept."
+            },
+            ua: {
+                "portfolio-title": "Портфоліо",
+                "works-title": "Роботи",
+                "about-me": "Про мене",
+                "desc-villain": "Темний і загадковий дизайн персонажа.",
+                "desc-pool": "Атмосфера біля басейну.",
+                "desc-televisor": "Глітчовий та сюрреалістичний телевізор."
+            }
+        };
+
+        function switchLang(lang) {
+            document.getElementById("portfolio-title").textContent = translations[lang]["portfolio-title"];
+            document.getElementById("works-title").textContent = translations[lang]["works-title"];
+            document.getElementById("about-me").textContent = translations[lang]["about-me"];
+        }
+
+        function openModal(item) {
+            let imgSrc = "";
+            let description = "";
+
+            switch(item) {
+                case 'villain':
+                    imgSrc = "VILLAIN.png";
+                    description = translations[document.documentElement.lang]["desc-villain"];
+                    break;
+                case 'pool':
+                    imgSrc = "POOL.png";
+                    description = translations[document.documentElement.lang]["desc-pool"];
+                    break;
+                case 'televisor':
+                    imgSrc = "TELEVISOR.png";
+                    description = translations[document.documentElement.lang]["desc-televisor"];
+                    break;
+            }
+
+            document.getElementById("modal-img").src = imgSrc;
+            document.getElementById("modal-description").textContent = description;
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
