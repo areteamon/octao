@@ -17,12 +17,12 @@
 
     <section class="hero">
         <h1 id="portfolio-title">Your Vision, My Design</h1>
-        <p>Welcome to the creative world of OCTAO. Here, every pixel tells a story.</p>
+        <p id="hero-desc">Welcome to the creative world of OCTAO. Here, every pixel tells a story.</p>
     </section>
 
     <section class="container">
         <h2 id="about-me">About Me</h2>
-        <p>Yo! I’m Artem, the mastermind behind OCTAO. A designer, a visionary, a rebel who doesn’t follow trends, but creates them. I breathe life into pixels, mix colors, and make the abstract become real. If you’re looking for work that doesn’t blend into the background, you’ve found your guy.</p>
+        <p id="about-desc">Yo! I’m Artem, the mastermind behind OCTAO. A designer, a visionary, a rebel who doesn’t follow trends, but creates them. I breathe life into pixels, mix colors, and make the abstract become real. If you’re looking for work that doesn’t blend into the background, you’ve found your guy.</p>
     </section>
 
     <div class="container">
@@ -49,33 +49,48 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 OCTAO. All rights reserved. Made with passion, pixel by pixel.</p>
+        <p id="footer-text">&copy; 2025 OCTAO. All rights reserved. Made with passion, pixel by pixel.</p>
     </footer>
 
     <script>
         const translations = {
             en: {
                 "portfolio-title": "Your Vision, My Design",
+                "hero-desc": "Welcome to the creative world of OCTAO. Here, every pixel tells a story.",
                 "works-title": "My Works",
                 "about-me": "About Me",
+                "about-desc": "Yo! I’m Artem, the mastermind behind OCTAO. A designer, a visionary, a rebel who doesn’t follow trends, but creates them. I breathe life into pixels, mix colors, and make the abstract become real. If you’re looking for work that doesn’t blend into the background, you’ve found your guy.",
                 "desc-villain": "A dark and mysterious character design that pulls you in, capturing both danger and allure.",
                 "desc-pool": "A moody poolside atmosphere that makes you feel the solitude and the elegance of the moment.",
-                "desc-televisor": "A glitchy, surreal concept that turns a simple TV into an otherworldly experience. Reality is just a suggestion."
+                "desc-televisor": "A glitchy, surreal concept that turns a simple TV into an otherworldly experience. Reality is just a suggestion.",
+                "footer-text": "© 2025 OCTAO. All rights reserved. Made with passion, pixel by pixel."
             },
             ua: {
                 "portfolio-title": "Твоє бачення, мій дизайн",
+                "hero-desc": "Ласкаво просимо в креативний світ OCTAO. Тут кожен піксель розповідає свою історію.",
                 "works-title": "Мої роботи",
                 "about-me": "Про мене",
+                "about-desc": "Йо! Я Артем, мозок OCTAO. Дизайнер, візіонер, бунтар, який не слідує трендам, а створює їх. Я вдихаю життя в пікселі, змішую кольори і роблю абстрактне реальним. Якщо ти шукаєш роботу, яка не зливається в фон, ти знайшов свого хлопця.",
                 "desc-villain": "Темний і загадковий дизайн персонажа, що захоплює тебе і відображає небезпеку та привабливість одночасно.",
                 "desc-pool": "Меланхолійна атмосфера біля басейну, де відчувається самотність і елегантність кожної миті.",
-                "desc-televisor": "Глітчовий, сюрреалістичний концепт, де телевізор стає чимось іншим, далеким від звичного. Реальність — це лише пропозиція."
+                "desc-televisor": "Глітчовий, сюрреалістичний концепт, де телевізор стає чимось іншим, далеким від звичного. Реальність — це лише пропозиція.",
+                "footer-text": "© 2025 OCTAO. Всі права захищено. Створено з пристрастю, піксель за пікселем."
             }
         };
 
         function switchLang(lang) {
+            // Update all text content on the page according to the selected language
             document.getElementById("portfolio-title").textContent = translations[lang]["portfolio-title"];
+            document.getElementById("hero-desc").textContent = translations[lang]["hero-desc"];
             document.getElementById("works-title").textContent = translations[lang]["works-title"];
             document.getElementById("about-me").textContent = translations[lang]["about-me"];
+            document.getElementById("about-desc").textContent = translations[lang]["about-desc"];
+            document.getElementById("footer-text").textContent = translations[lang]["footer-text"];
+            
+            // Update modal descriptions
+            translations[lang]["desc-villain"] && (document.getElementById("modal-description").textContent = translations[lang]["desc-villain"]);
+            translations[lang]["desc-pool"] && (document.getElementById("modal-description").textContent = translations[lang]["desc-pool"]);
+            translations[lang]["desc-televisor"] && (document.getElementById("modal-description").textContent = translations[lang]["desc-televisor"]);
         }
 
         function openModal(item) {
