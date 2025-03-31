@@ -42,7 +42,7 @@
 
     <!-- Modal -->
     <div id="modal" class="modal" onclick="closeModal()">
-        <div class="modal-content">
+        <div class="modal-content" onclick="event.stopPropagation()">
             <img id="modal-img" src="" alt="Image">
             <p id="modal-description"></p>
         </div>
@@ -79,18 +79,14 @@
         };
 
         function switchLang(lang) {
-            // Update all text content on the page according to the selected language
+            // Оновлення мови для елементів
+            document.documentElement.lang = lang;
             document.getElementById("portfolio-title").textContent = translations[lang]["portfolio-title"];
             document.getElementById("hero-desc").textContent = translations[lang]["hero-desc"];
             document.getElementById("works-title").textContent = translations[lang]["works-title"];
             document.getElementById("about-me").textContent = translations[lang]["about-me"];
             document.getElementById("about-desc").textContent = translations[lang]["about-desc"];
             document.getElementById("footer-text").textContent = translations[lang]["footer-text"];
-            
-            // Update modal descriptions
-            translations[lang]["desc-villain"] && (document.getElementById("modal-description").textContent = translations[lang]["desc-villain"]);
-            translations[lang]["desc-pool"] && (document.getElementById("modal-description").textContent = translations[lang]["desc-pool"]);
-            translations[lang]["desc-televisor"] && (document.getElementById("modal-description").textContent = translations[lang]["desc-televisor"]);
         }
 
         function openModal(item) {
