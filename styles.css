@@ -26,41 +26,27 @@ body {
 }
 
 .logo {
-    width: 120px;
+    width: 100px;
     margin: 10px auto;
     display: block;
 }
 
 h1 {
     color: #adadad;
-    font-size: 90px;
+    font-size: 6vw;
     margin: 20px 0;
 }
 
 h2 {
     color: #adadad;
-    font-size: 180px;
-    margin: 10px 0;
-    position: relative;
-    z-index: 2;
-}
-
-.my-works-title {
-    font-size: 160px;
-    margin: 10px 0;
-    position: relative;
-    z-index: 2;
-}
-
-.contact-title {
-    font-size: 140px;
+    font-size: 10vw;
     margin: 10px 0;
     position: relative;
     z-index: 2;
 }
 
 p, .contact a {
-    font-size: 26px;
+    font-size: 20px;
     margin: 5px 0;
     position: relative;
     z-index: 1;
@@ -78,55 +64,69 @@ p, .contact a {
     transform: translateY(0);
 }
 
-/* Стилі для секцій */
+/* Секції */
 section {
-    padding: 20px 10px;
-    max-width: 1200px;
+    padding: 20px;
+    max-width: 1000px;
     margin: auto;
     position: relative;
 }
 
-/* Накладання тексту */
-.overlapping {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
+/* Галерея */
 .gallery {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 .gallery img {
-    width: 30%;
+    width: 45%;
     max-width: 250px;
     height: auto;
     border-radius: 10px;
 }
 
-/* Контактна секція */
+/* Контакти */
 .contact a {
     color: #adadad;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* Перемикач мови */
-.language-switch {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+/* Медіа-запити */
+@media (max-width: 768px) {
+    .logo {
+        width: 80px;
+    }
+
+    h1 {
+        font-size: 8vw;
+    }
+
+    h2 {
+        font-size: 12vw;
+    }
+
+    .gallery img {
+        width: 90%;
+    }
 }
 
-.language-switch button {
-    background: none;
-    border: 2px solid #adadad;
-    color: #adadad;
-    font-size: 16px;
-    padding: 6px;
-    cursor: pointer;
+@media (max-width: 480px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+    h2 {
+        font-size: 14vw;
+    }
+
+    p, .contact a {
+        font-size: 18px;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
 }
