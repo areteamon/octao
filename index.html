@@ -6,116 +6,44 @@
     <title>OCTAO Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<script src="script.js"></script>
 <body>
+    <div class="background"></div>
     <header>
         <img src="logo.png" alt="OCTAO Logo" class="logo">
-        <div class="lang-switch">
-            <button onclick="switchLang('en')">🇬🇧</button>
-            <button onclick="switchLang('ua')">🇺🇦</button>
-        </div>
     </header>
-
-    <section class="hero">
-        <h1 id="portfolio-title">Your Vision, My Design</h1>
-        <p id="hero-desc">Welcome to the creative world of OCTAO. Here, every pixel tells a story.</p>
+    
+    <section class="intro fade-in">
+        <h1>YOUR VISION MY DESIGN</h1>
+        <p>WELCOME TO THE CREATIVE WORLD OF OCTAO. HERE, EVERY PIXEL TELLS A STORY</p>
     </section>
-
-    <section class="container">
-        <h2 id="about-me">About Me</h2>
-        <p id="about-desc">Yo! I’m Artem, the mastermind behind OCTAO. A designer, a visionary, a rebel who doesn’t follow trends, but creates them. I breathe life into pixels, mix colors, and make the abstract become real. If you’re looking for work that doesn’t blend into the background, you’ve found your guy.</p>
+    
+    <section class="about fade-in">
+        <h2>ABOUT ME</h2>
+        <p>YO! I'M ARTEM, THE MASTERMIND BEHIND OCTAO...</p>
     </section>
-
-    <div class="container">
-        <h2 id="works-title">My Works</h2>
-        <div class="grid">
-            <div class="item" onclick="openModal('villain')">
-                <img src="VILLAIN.png" alt="Villain">
-            </div>
-            <div class="item" onclick="openModal('pool')">
-                <img src="POOL.png" alt="Pool">
-            </div>
-            <div class="item" onclick="openModal('televisor')">
-                <img src="TELEVISOR.png" alt="Televisor">
-            </div>
+    
+    <section class="works fade-in">
+        <h2>MY WORKS</h2>
+        <div class="gallery">
+            <img src="POOL.png" alt="Work 1">
+            <img src="VILLAIN.png" alt="Work 2">
+            <img src="CREAZIONE.png" alt="Work 3">
+            <img src="POOL.png" alt="Work 1">
+            <img src="VILLAIN.png" alt="Work 2">
+            <img src="CREAZIONE.png" alt="Work 3">
+            <img src="POOL.png" alt="Work 1">
+            <img src="VILLAIN.png" alt="Work 2">
+            <img src="CREAZIONE.png" alt="Work 3">
         </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img id="modal-img" src="" alt="Image">
-            <p id="modal-description"></p>
-        </div>
-    </div>
-
-    <footer>
-        <p id="footer-text">&copy; 2025 OCTAO. All rights reserved. Made with passion, pixel by pixel.</p>
-    </footer>
-
-    <script>
-        const translations = {
-            en: {
-                "portfolio-title": "Your Vision, My Design",
-                "hero-desc": "Welcome to the creative world of OCTAO. Here, every pixel tells a story.",
-                "works-title": "My Works",
-                "about-me": "About Me",
-                "about-desc": "Yo! I’m Artem, the mastermind behind OCTAO. A designer, a visionary, a rebel who doesn’t follow trends, but creates them. I breathe life into pixels, mix colors, and make the abstract become real. If you’re looking for work that doesn’t blend into the background, you’ve found your guy.",
-                "desc-villain": "A dark and mysterious character design that pulls you in, capturing both danger and allure.",
-                "desc-pool": "A moody poolside atmosphere that makes you feel the solitude and the elegance of the moment.",
-                "desc-televisor": "A glitchy, surreal concept that turns a simple TV into an otherworldly experience. Reality is just a suggestion.",
-                "footer-text": "© 2025 OCTAO. All rights reserved. Made with passion, pixel by pixel."
-            },
-            ua: {
-                "portfolio-title": "Твоє бачення, мій дизайн",
-                "hero-desc": "Ласкаво просимо в креативний світ OCTAO. Тут кожен піксель розповідає свою історію.",
-                "works-title": "Мої роботи",
-                "about-me": "Про мене",
-                "about-desc": "Йо! Я Артем, мозок OCTAO. Дизайнер, візіонер, бунтар, який не слідує трендам, а створює їх. Я вдихаю життя в пікселі, змішую кольори і роблю абстрактне реальним. Якщо ти шукаєш роботу, яка не зливається в фон, ти знайшов свого хлопця.",
-                "desc-villain": "Темний і загадковий дизайн персонажа, що захоплює тебе і відображає небезпеку та привабливість одночасно.",
-                "desc-pool": "Меланхолійна атмосфера біля басейну, де відчувається самотність і елегантність кожної миті.",
-                "desc-televisor": "Глітчовий, сюрреалістичний концепт, де телевізор стає чимось іншим, далеким від звичного. Реальність — це лише пропозиція.",
-                "footer-text": "© 2025 OCTAO. Всі права захищено. Створено з пристрастю, піксель за пікселем."
-            }
-        };
-
-        function switchLang(lang) {
-            // Оновлення мови для елементів
-            document.documentElement.lang = lang;
-            document.getElementById("portfolio-title").textContent = translations[lang]["portfolio-title"];
-            document.getElementById("hero-desc").textContent = translations[lang]["hero-desc"];
-            document.getElementById("works-title").textContent = translations[lang]["works-title"];
-            document.getElementById("about-me").textContent = translations[lang]["about-me"];
-            document.getElementById("about-desc").textContent = translations[lang]["about-desc"];
-            document.getElementById("footer-text").textContent = translations[lang]["footer-text"];
-        }
-
-        function openModal(item) {
-            let imgSrc = "";
-            let description = "";
-
-            switch(item) {
-                case 'villain':
-                    imgSrc = "VILLAIN.png";
-                    description = translations[document.documentElement.lang]["desc-villain"];
-                    break;
-                case 'pool':
-                    imgSrc = "POOL.png";
-                    description = translations[document.documentElement.lang]["desc-pool"];
-                    break;
-                case 'televisor':
-                    imgSrc = "TELEVISOR.png";
-                    description = translations[document.documentElement.lang]["desc-televisor"];
-                    break;
-            }
-
-            document.getElementById("modal-img").src = imgSrc;
-            document.getElementById("modal-description").textContent = description;
-            document.getElementById("modal").style.display = "flex";
-        }
-
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
-    </script>
+    </section>
+    
+    <section class="contact fade-in">
+        <h2>CONTACT ME</h2>
+        <p>Telegram: <a href="https://t.me/areteamon">areteamon</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/octao.ps">octao.ps</a></p>
+    </section>
+    
+    <script src="script.js"></script>
 </body>
 </html>
