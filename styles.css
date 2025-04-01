@@ -14,14 +14,16 @@ body {
     text-align: center;
 }
 
+/* Фіксований фон */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('bg.png') no-repeat center center fixed;
+    background: url('bg.png') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
     z-index: -1;
 }
 
@@ -92,6 +94,13 @@ section {
     color: #adadad;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Для iOS (він іноді ігнорує `background-attachment: fixed`) */
+@supports (-webkit-touch-callout: none) {
+    .background {
+        background-attachment: scroll;
+    }
 }
 
 /* Медіа-запити */
