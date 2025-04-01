@@ -1,7 +1,7 @@
 /* Загальні стилі */
 @font-face {
-    font-family: 'CARIBOLB';
-    src: url('./CARIBOLB.ttf') format('truetype');
+    font-family: 'CARIBOLD';
+    src: url('./CARIBOLD.ttf') format('truetype');
     font-display: swap;
 }
 
